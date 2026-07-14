@@ -1,0 +1,420 @@
+/* ==========================================
+   NOTEBOOKS (1200px)
+========================================== */
+
+@media (max-width:1200px){
+
+    .container{
+        width:92%;
+    }
+
+    .hero-content{
+        gap:40px;
+    }
+
+    .hero-text h1{
+        font-size:48px;
+    }
+
+    .passos .container{
+        gap:20px;
+    }
+
+}
+
+/* ==========================================
+   TABLETS (992px)
+========================================== */
+
+@media (max-width:992px){
+
+    header .container{
+        height:75px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .menu-mobile{
+        display:block;
+    }
+
+    .hero{
+        padding:60px 0;
+    }
+
+    .hero-content{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-text p{
+        margin:20px auto 35px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-image{
+        max-width:700px;
+        margin:auto;
+    }
+
+    .stats .container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .galeria{
+        grid-template-columns:1fr;
+    }
+
+    .passos .container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .ods-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .footer-content img{
+        margin:auto auto 20px;
+    }
+
+    .social{
+        justify-content:center;
+    }
+
+}
+
+@media(max-width:980px){
+
+.funciona-wrapper{
+
+    grid-template-columns:1fr;
+
+}
+
+.carousel img{
+
+    height:400px;
+
+}
+
+.info-card{
+
+    text-align:center;
+
+}
+
+.dots{
+
+    justify-content:center;
+
+}
+
+}
+
+
+
+/* ==========================================
+   CELULARES GRANDES (768px)
+========================================== */
+
+@media (max-width:768px){
+
+    section{
+        padding:70px 0 !important;
+    }
+
+    .hero{
+        margin-top:70px;
+    }
+
+    .hero-text h1{
+        font-size:38px;
+    }
+
+    .hero-text p{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+        width:100%;
+        max-width:320px;
+        justify-content:center;
+    }
+
+    .stats .container{
+        grid-template-columns:1fr;
+    }
+
+    .stat-card{
+        justify-content:flex-start;
+        padding:20px;
+    }
+
+    .como-funciona h2,
+    .ods h2,
+    .cta h2{
+        font-size:32px;
+    }
+
+    .galeria img{
+        height:280px;
+    }
+
+    .passos .container{
+        grid-template-columns:1fr;
+    }
+
+    .ods-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+.carousel img{
+
+    height:260px;
+
+}
+
+.info-card{
+
+    padding:25px;
+
+}
+
+.info-card h3{
+
+    font-size:26px;
+
+}
+
+}
+/* ==========================================
+   CELULARES PEQUENOS (576px)
+========================================== */
+
+@media (max-width:576px){
+
+    .container{
+        width:94%;
+    }
+
+    .hero-text h1{
+        font-size:30px;
+    }
+
+    .hero-text p{
+        font-size:15px;
+    }
+
+    .hero-image::before,
+    .hero-image::after{
+        display:none;
+    }
+
+    .stat-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .stat-card i{
+        font-size:34px;
+    }
+
+    .stat-card h2{
+        font-size:28px;
+    }
+
+    .passo{
+        padding:25px 20px;
+    }
+
+    .passo h3{
+        font-size:21px;
+    }
+
+    .passo p{
+        font-size:14px;
+    }
+
+    .galeria img{
+        height:220px;
+    }
+
+    .ods-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cta{
+        padding:60px 20px;
+    }
+
+    .cta h2{
+        font-size:26px;
+    }
+
+    .cta p{
+        font-size:15px;
+    }
+
+    .footer-content{
+        gap:40px;
+    }
+
+    .social{
+        gap:12px;
+    }
+
+    .social a{
+        width:42px;
+        height:42px;
+    }
+
+}
+
+/* ==========================================
+   ANIMAÇÕES MOBILE
+========================================== */
+
+@media (hover:none){
+
+    .passo:hover,
+    .galeria img:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .social a:hover{
+
+        transform:none;
+
+    }
+
+}
+
+/* ==========================================
+   MENU MOBILE
+========================================== */
+
+.mobile-menu{
+
+    position:fixed;
+
+    top:75px;
+    right:-100%;
+
+    width:270px;
+    height:calc(100vh - 75px);
+
+    background:white;
+
+    box-shadow:-10px 0 30px rgba(0,0,0,.1);
+
+    transition:.35s;
+
+    padding:40px;
+
+    z-index:998;
+
+}
+
+.mobile-menu.active{
+
+    right:0;
+
+}
+
+.mobile-menu ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.mobile-menu a{
+
+    font-weight:500;
+
+    color:#333;
+
+}
+
+.mobile-menu a:hover{
+
+    color:var(--green);
+
+}
+
+/* ==========================================
+   OVERLAY
+========================================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:997;
+
+}
+
+.overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+@media(max-width:768px){
+
+.footer-container{
+
+    flex-direction:column;
+    gap:18px;
+
+}
+
+.footer-authors{
+
+    flex-wrap:wrap;
+    justify-content:center;
+    margin:0;
+
+}
+
+.footer-year{
+
+    min-width:auto;
+
+}
+
+}

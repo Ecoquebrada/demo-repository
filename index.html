@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoQuebrada</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Magra:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="assets/icon-favicon.svg" type="image/x-icon">
+
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="container">
+
+            <a href="#" class="logo">
+                <img src="assets/logo-Ecoquebrada.svg" alt="EcoQuebrada">
+            </a>
+
+            <nav>
+
+                <ul>
+
+                    <li><a href="#home">Mapa</a></li>
+                    <li><a href="#denuncias">Denúncias</a></li>
+                    <li><a href="#educacao">Educação</a></li>
+                    <li><a href="#impacto">Impacto</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+
+                </ul>
+
+            </nav>
+
+            <a href="#" class="btn-login">
+                Entrar
+            </a>
+
+            <button class="menu-mobile">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <h1>
+                    Transformando o descarte em
+                    <span>impacto</span>
+                    para nossa comunidade
+                </h1>
+
+                <p>
+                    Juntos por uma quebrada mais limpa,
+                    verde e consciente.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#" class="btn-primary">
+                        Quero participar
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#" class="btn-secondary">
+                        Ver no mapa
+                        <i class="fa-solid fa-location-dot"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ESTATÍSTICAS ================= -->
+
+    <section class="stats">
+
+        <div class="container">
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-recycle"></i>
+
+                <div>
+
+                    <h2 class="counter" data-target="12000">0</h2>
+
+                    <span>Resíduos Reciclados</span>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <div>
+
+                    <h2 class="counter" data-target="2450">0</h2>
+
+                    <span>Pessoas Participantes</span>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+
+                    <h2 class="counter" data-target="48">0</h2>
+
+                    <span>Ecopontos Ativos</span>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-tree"></i>
+
+                <div>
+
+                    <h2 class="counter" data-target="630">0</h2>
+
+                    <span>Árvores Salvas</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= COMO FUNCIONA ================= -->
+
+    <!-- <section class="como-funciona">
+
+        <div class="container">
+
+            <h2>Como funciona?</h2>
+
+            <div class="galeria">
+
+                <img src="assets/imageHero.png" alt="Ponto sustentável">
+
+
+            </div>
+
+        </div>
+
+    </section> -->
+
+    <section class="como-funciona" id="como-funciona">
+
+    <div class="container">
+
+        <h2>Como funciona?</h2>
+
+        <div class="funciona-wrapper">
+
+            <!-- Carrossel -->
+    <section class="ecopontos">
+
+        <h2>Ecopontos próximos</h2>
+
+        <div class="ecoponto-container">
+
+            <button id="prev">
+                ❮
+            </button>
+
+            <div class="imagem">
+
+                <img id="foto" src="">
+
+            </div>
+
+            <div class="informacoes">
+
+                <h3 id="nome"></h3>
+
+                <p>
+                    <strong>📍 Distância:</strong>
+                    <span id="distancia"></span>
+                </p>
+
+                <p>
+                    <strong>Endereço:</strong>
+                    <span id="endereco"></span>
+                </p>
+
+                <p>
+                    <strong>Horário:</strong>
+                    <span id="horario"></span>
+                </p>
+
+                <h4>Materiais aceitos</h4>
+
+                <ul id="materiais"></ul>
+
+                <a
+                    id="maps"
+                    target="_blank"
+                    class="btn-primary">
+
+                    Ver no Google Maps
+
+                </a>
+
+            </div>
+
+            <button id="next">
+                ❯
+            </button>
+
+        </div>
+
+        </section>
+
+</section>
+
+
+    <!-- ================= PASSOS ================= -->
+
+    <section class="passos">
+
+        <div class="container">
+
+            <div class="passo">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <h3>1. Separe</h3>
+
+                <p>
+                    Separe seus resíduos em casa de forma correta.
+                </p>
+
+            </div>
+
+            <div class="passo">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <h3>2. Leve</h3>
+
+                <p>
+                    Encontre o Ecoponto mais próximo.
+                </p>
+
+            </div>
+
+            <div class="passo">
+
+                <i class="fa-solid fa-trash"></i>
+
+                <h3>3. Descarte</h3>
+
+                <p>
+                    Faça o descarte de maneira sustentável.
+                </p>
+
+            </div>
+
+            <div class="passo">
+
+                <i class="fa-solid fa-seedling"></i>
+
+                <h3>4. Transforme</h3>
+
+                <p>
+                    Ganhe pontos e ajude sua comunidade.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ODS ================= -->
+
+    <section class="ods">
+
+        <div class="container">
+
+            <h2>
+                Conectado aos Objetivos de Desenvolvimento Sustentável
+            </h2>
+
+            <div class="ods-grid">
+
+                <img src="assets/ods-4.svg" alt="">
+                <img src="assets/ods-11.svg" alt="">
+                <img src="assets/ods-12.svg" alt="">
+                <img src="assets/ods-13.svg" alt="">
+                <img src="assets/ods-17.svg" alt="">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CTA ================= 
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                Faça parte da transformação.
+            </h2>
+
+            <p>
+                Junte-se à EcoQuebrada e contribua para um bairro mais limpo,
+                sustentável e conectado.
+            </p>
+
+            <a href="#" class="btn-primary">
+                Quero participar
+            </a>
+
+        </div>
+
+    </section>
+    -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-year">
+            <strong>2026</strong>
+        </div>
+
+        <div class="footer-authors">
+
+            <span>FEITO POR</span>
+
+            <a href="#">Agda Oliveira</a>
+
+            <span>●</span>
+
+            <a href="#">Rosana Ferreira</a>
+
+            <span>●</span>
+
+            <a href="#">Maria Eduarda</a>
+
+            <span>●</span>
+
+            <a href="#">Poliana Machado</a>
+
+            <span>●</span>
+
+            <a href="#">José Victor</a>
+
+        </div>
+
+        <div class="footer-logo">
+
+            <img src="assets/icon-footer.svg" alt="EcoQuebrada">
+
+        </div>
+
+    </div>
+
+</footer>
+
+    <script src="script/app.js"></script>
+
+</body>
+</html>

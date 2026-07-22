@@ -1,0 +1,73 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+  & .mapa {
+    max-width: 1296px;
+    margin: auto;
+    margin-top: 108px;
+    margin-bottom: 18px;
+    border: 3px solid #28622e;
+    border-radius: 16px;
+
+    & iframe {
+      width: 100%;
+      border-radius: 16px;
+    }
+  }
+
+  & .rotas {
+    max-width: 1296px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    margin-bottom: 18px;
+    gap: 18px;
+
+    & .card {
+      width: 639px;
+      padding: 36px;
+      border: 1px solid #28622e;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 12.25px;
+      box-shadow: 0px -12px 12px 0px rgba(40, 98, 46, 0.36) inset;
+
+      & h2 {
+        font-size: 36px;
+        color: #101010;
+      }
+
+      & .distancia {
+        display: flex;
+        gap: 3px;
+
+        & p {
+          font-size: 24px;
+        }
+        & span {
+          font-weight: 800;
+        }
+      }
+
+      & p:nth-child(4) {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.botao-mapa {
+        width: 184px;
+        padding: 16px;
+        color: #fff;
+        border-radius: 12px;
+        font-size: 24px;
+        background:
+          linear-gradient(rgba(40, 98, 46, 0.88)), url("../assets/bg-btn.png");
+}

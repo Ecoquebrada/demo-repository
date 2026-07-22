@@ -1,0 +1,945 @@
+/* =====================================================
+   ECOQUEBRADA — PÁGINA SOBRE
+   FRAME PRINCIPAL: 1440px × 1639px
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Magra:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: 'Magra', sans-serif;
+
+    background: #ffffff;
+    color: #111111;
+}
+
+
+/* =====================================================
+   VARIÁVEIS
+===================================================== */
+
+:root {
+
+    --verde-principal: #2e7d32;
+    --verde-escuro: #1b5e20;
+    --verde-claro: #8bc34a;
+
+    --preto: #111111;
+    --branco: #ffffff;
+
+}
+
+
+/* =====================================================
+   CONTAINER PRINCIPAL
+===================================================== */
+
+.container{
+
+    width:min(1200px,90%);
+    margin:auto;
+
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:90px;
+
+    z-index:1000;
+
+    background-color: var(--branco);
+
+    box-shadow:none;
+}
+
+header .container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    height:82px;
+
+}
+
+header nav a{
+    color:#222;
+}
+
+.btn-login{
+
+    background:#2E7D32;
+    color:white;
+
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo img{
+
+    height:42px;
+
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+nav ul{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+nav a{
+
+    color:#333;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+nav a:hover{
+
+    color:var(--green);
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-7px;
+    left:0;
+
+    width:0%;
+
+    height:2px;
+
+    background:var(--green);
+
+    transition:.3s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+
+/* =====================================================
+   BOTÃO LOGIN
+===================================================== */
+
+.btn-login {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 150px;
+
+    height: 52px;
+
+    border-radius: 6px;
+
+    background: var(--verde-principal);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    transition: .2s ease;
+
+}
+
+.btn-login:hover {
+
+    background: var(--verde-escuro);
+
+}
+
+
+/* =====================================================
+   MENU MOBILE
+===================================================== */
+
+.menu-mobile {
+
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--verde-principal);
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+
+    width: 100%;
+
+    min-height: 1400px;
+
+    margin-top: 5%;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    padding-top: 38px;
+
+    padding-left: 85px;
+
+    padding-right: 85px;
+
+    text-align: center;
+
+}
+
+.hero__title {
+
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    font-weight: 400;
+
+    color: var(--verde-escuro);
+
+    margin-bottom: 14px;
+
+}
+
+.hero__highlight {
+
+    font-family: "Londrina Solid", sans-serif;
+
+    font-weight: 700;
+
+}
+
+.hero__text {
+
+    max-width: 1260px;
+
+    margin: 0 auto;
+
+    font-size: 16px;
+
+    line-height: 1.35;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+   PILARES
+===================================================== */
+
+.pillars {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 55px;
+
+    align-items: start;
+
+    padding: 20px 85px 0;
+
+}
+
+
+/* =====================================================
+   TEXTOS DOS PILARES
+===================================================== */
+
+.pillars__text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+.pillar h2 {
+
+    font-size: 26px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: var(--verde-principal);
+
+    margin-bottom: 6px;
+
+}
+
+.pillar p {
+
+    font-size: 15px;
+
+    line-height: 1.25;
+
+    text-align: justify;
+
+}
+
+
+/* =====================================================
+   IMAGEM DOS VOLUNTÁRIOS
+===================================================== */
+
+.pillars__image {
+
+    width: 100%;
+
+}
+
+.pillars__photo {
+
+    width: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+.pillars__image .pillars__photo {
+
+    width: 100%;
+
+    height: 365px;
+
+    border-radius: 12px;
+
+}
+
+
+/* =====================================================
+   OBJETIVOS
+===================================================== */
+
+.goals {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+
+    align-items: center;
+
+    padding: 35px 85px 0;
+
+}
+
+.goals__image {
+
+    width: 100%;
+
+}
+
+.goals__image .pillars__photo {
+
+    height: 210px;
+
+    border-radius: 12px;
+
+}
+
+.goals__text {
+
+    padding-top: 0;
+
+}
+
+.goals__text h3 {
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    margin-bottom: 7px;
+
+}
+
+.goals__list {
+
+    padding-left: 22px;
+
+}
+
+.goals__list li {
+
+    font-size: 15px;
+
+    line-height: 1.3;
+
+}
+
+
+/* =====================================================
+   VISÃO / MISSÃO
+===================================================== */
+
+.statement {
+
+    padding: 24px 85px 0;
+
+}
+
+.statement__title {
+
+    font-family: "Londrina Solid", sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    color: var(--verde-principal);
+
+    margin-bottom: 6px;
+
+}
+
+.statement p {
+
+    font-size: 15px;
+
+    line-height: 1.3;
+
+    text-align: justify;
+
+}
+
+
+/* =====================================================
+   ODS
+===================================================== */
+
+.ods {
+
+    padding: 32px 85px 0;
+
+}
+
+.ods__title {
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 14px;
+
+}
+
+.ods__grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 22px;
+
+}
+
+
+/* =====================================================
+   CARDS ODS
+===================================================== */
+
+.ods__card {
+
+    height: 170px;
+
+    border-radius: 14px;
+
+    color: #ffffff;
+
+    padding: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+.ods__number {
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+}
+
+.ods__label {
+
+    font-size: 12px;
+
+    line-height: 1.15;
+
+    text-transform: uppercase;
+
+    font-weight: 600;
+
+}
+
+
+/* CORES ODS */
+
+.ods__card--4 {
+
+    background: #d7193f;
+
+}
+
+.ods__card--11 {
+
+    background: #f7941d;
+
+}
+
+.ods__card--12 {
+
+    background: #bf8b20;
+
+}
+
+.ods__card--13 {
+
+    background: #3f7f4c;
+
+}
+
+.ods__card--17 {
+
+    background: #3973a7;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    width: 100%;
+
+    height: 110px;
+
+    background: var(--verde-escuro);
+
+    color: #ffffff;
+
+}
+
+.footer__inner {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 85px;
+
+}
+
+.footer__year {
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    margin-right: 22px;
+
+}
+
+.footer__credits {
+
+    font-size: 10px;
+
+}
+
+.footer__leaf {
+
+    width: 40px;
+
+    height: 40px;
+
+    margin-left: auto;
+
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE — TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    header .container {
+
+        padding: 0 45px;
+
+    }
+
+    .pillars,
+
+    .goals {
+
+        padding-left: 45px;
+
+        padding-right: 45px;
+
+    }
+
+    .statement,
+
+    .ods {
+
+        padding-left: 45px;
+
+        padding-right: 45px;
+
+    }
+
+    nav ul {
+
+        gap: 25px;
+
+    }
+
+    nav a {
+
+        font-size: 15px;
+
+    }
+
+    .logo img {
+
+        width: 190px;
+
+    }
+
+    .hero__title {
+
+        font-size: 36px;
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE — TABLET MENOR
+===================================================== */
+
+@media (max-width: 800px) {
+
+    header {
+
+        height: 90px;
+
+    }
+
+    header .container {
+
+        padding: 0 25px;
+
+    }
+
+    nav,
+
+    .btn-login {
+
+        display: none;
+
+    }
+
+    .menu-mobile {
+
+        display: block;
+
+    }
+
+    .hero {
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+
+    }
+
+    .hero__title {
+
+        font-size: 32px;
+
+    }
+
+    .pillars {
+
+        grid-template-columns: 1fr;
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+
+    }
+
+    .pillars__image {
+
+        order: -1;
+
+    }
+
+    .goals {
+
+        grid-template-columns: 1fr;
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+
+    }
+
+    .statement,
+
+    .ods {
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+
+    }
+
+    .ods__grid {
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .footer__inner {
+
+        padding: 0 25px;
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE — CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .logo img {
+
+        width: 155px;
+
+    }
+
+    .hero {
+
+        padding-top: 25px;
+
+    }
+
+    .hero__title {
+
+        font-size: 27px;
+
+    }
+
+    .hero__text {
+
+        font-size: 13px;
+
+    }
+
+    .pillar h2 {
+
+        font-size: 22px;
+
+    }
+
+    .pillar p,
+
+    .statement p,
+
+    .goals__list li {
+
+        font-size: 13px;
+
+    }
+
+    .pillars__image .pillars__photo {
+
+        height: 250px;
+
+    }
+
+    .goals__image .pillars__photo {
+
+        height: 230px;
+
+    }
+
+    .ods__grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .ods__card:last-child {
+
+        grid-column: span 2;
+
+    }
+
+    .footer {
+
+        height: auto;
+
+        padding: 20px 0;
+
+    }
+
+    .footer__inner {
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+    }
+
+    .footer__year {
+
+        font-size: 24px;
+
+    }
+
+}
+
+
+/* =====================================================
+   CELULARES PEQUENOS
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .hero__title {
+
+        font-size: 23px;
+
+    }
+
+    .hero__text {
+
+        font-size: 12px;
+
+    }
+
+    .pillar h2 {
+
+        font-size: 20px;
+
+    }
+
+    .ods__card {
+
+        height: 130px;
+
+        padding: 12px;
+
+    }
+
+    .ods__number {
+
+        font-size: 30px;
+
+    }
+
+    .ods__label {
+
+        font-size: 9px;
+
+    }
+
+}

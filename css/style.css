@@ -274,7 +274,7 @@ nav a:hover::after{
 
     inset:0;
 
-    background:url("/assets/imageBackgroundHome.png") no-repeat right center;
+    background:url("../assets/imageBackgroundHome.png") no-repeat right center;
 
     background-size:cover;
 

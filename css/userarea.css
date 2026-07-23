@@ -1,0 +1,439 @@
+/* ==========================================================================
+   1. VARIÁVEIS E ESTILOS GERAIS
+   ========================================================================== */
+:root {
+    --primary-green: #2B5C31;
+    --light-green-bg: #E8F2E9;
+    --white: #FFFFFF;
+    --text-dark: #333333;
+    --text-muted: #666666;
+    --accent-green: #4CAF50;
+    --accent-orange: #FF5722;
+    --border-radius-main: 24px;
+    --box-shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --border-soft: 1.5px solid rgba(43, 92, 49, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #F9FBF9;
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   2. HEADER / NAVEGAÇÃO
+   ========================================================================== */
+header {
+    background-color: var(--white);
+    border-bottom: 2px solid var(--primary-green);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 42px;
+}
+
+.logo-icon {
+    color: var(--accent-green);
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary-green);
+    letter-spacing: -0.5px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-green);
+}
+
+.btn-account {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-account:hover {
+    background-color: #1e4222;
+}
+
+.btn-account:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   3. CONTAINER PRINCIPAL E GRID
+   ========================================================================== */
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Seção de Perfil e Nível */
+.profile-level-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+}
+
+@media (max-width: 768px) {
+    .profile-level-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Cartões Base */
+.card {
+    background-color: var(--white);
+    border: var(--border-soft);
+    border-radius: var(--border-radius-main);
+    padding: 30px;
+    box-shadow: var(--box-shadow-soft);
+}
+
+/* Bloco Perfil */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.avatar-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #A3D154;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 4px solid var(--white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.avatar-img {
+    width: 80%;
+    height: auto;
+    margin-bottom: -5px;
+}
+
+.username {
+    font-size: 18px;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* Bloco Nível */
+.level-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.level-card h2 {
+    font-size: 24px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.level-display {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.level-number {
+    font-size: 26px;
+    color: var(--text-dark);
+}
+
+/* Barra de Progresso */
+.progress-container {
+    width: 100%;
+    background-color: #E0E0E0;
+    height: 18px;
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 36.25%; /* (145 / 400) * 100 */
+    background-color: var(--primary-green);
+    border-radius: 9px;
+    transition: width 0.5s ease-out;
+}
+
+.progress-values {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+/* ==========================================================================
+   4. SEÇÃO DE CONTRIBUIÇÕES
+   ========================================================================== */
+.contributions-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.contributions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contribution-item {
+    background-color: #EAEAEA;
+    border-radius: 8px;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contribution-item:hover {
+    transform: translateX(5px);
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+}
+
+.item-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #444444;
+}
+
+.item-label .material-symbols-outlined {
+    font-size: 22px;
+    color: #555555;
+}
+
+.item-points {
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.points-green {
+    color: var(--primary-green);
+}
+
+.points-orange {
+    color: var(--accent-orange);
+}
+
+/* ==========================================================================
+   5. CARDS DE PASSO A PASSO (RODAPÉ INFORMATIVO)
+   ========================================================================== */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 10px;
+}
+
+@media (max-width: 992px) {
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.step-card {
+    background-color: var(--white);
+    border: var(--border-soft);
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--box-shadow-soft);
+}
+
+.step-icon-wrapper {
+    background-color: var(--light-green-bg);
+    border-radius: 12px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.step-icon-wrapper .material-symbols-outlined {
+    font-size: 32px;
+    color: var(--primary-green);
+}
+
+.step-info h3 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 2px;
+}
+
+.step-info p {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.3;
+}
+
+/* ==========================================================================
+   6. FOOTER
+   ========================================================================== */
+footer {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 20px 5%;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.footer-credits {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.year-badge {
+    font-weight: 800;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.footer-logo {
+    font-size: 28px;
+}
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   7. MENU MOBILE (HAMBURGUER) - mesmo padrão da index
+   ========================================================================== */
+.menu-mobile {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 25px;
+    color: var(--primary-green);
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 260px;
+        height: 100vh;
+        background: var(--white);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.08);
+        padding: 100px 25px 40px;
+        transition: 0.35s;
+        z-index: 99;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 15px 4%;
+    }
+
+    .logo img {
+        height: 34px;
+    }
+
+    .btn-account {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+}

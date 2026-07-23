@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoQuebrada - Área do Usuário</title>
+    <!-- Importação de ícones do Google Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <!-- Link para o CSS externo -->
+    <link rel="stylesheet" href="css/userarea.css">
+
+    <!-- Font Awesome (usado no menu hamburguer, mesmo padrão da index) -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER / MENU SUPERIOR -->
+    <header>
+        <a href="#" class="logo">
+            <img src="assets/logo-Ecoquebrada.svg" alt="EcoQuebrada">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#mapa">Mapa</a></li>
+                <li><a href="#denuncias">Denúncias</a></li>
+                <li><a href="#educacao">Educação</a></li>
+                <li><a href="#impacto">Impacto</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+        <button class="btn-account" onclick="handleAccountClick()">Minha conta</button>
+
+        <button class="menu-mobile">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+        
+        <!-- LINHA SUPERIOR: PERFIL E PROGRESSO -->
+        <div class="profile-level-row">
+            
+            <!-- Perfil Card -->
+            <section class="card profile-card">
+                <div class="avatar-container">
+                    <!-- SVG Vetorizado representando o avatar feminino da referência -->
+                    <svg class="avatar-img" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Cabelo de Trás -->
+                        <path d="M15,60 Q10,20 50,15 Q90,20 85,60 Z" fill="#0D1B2A"/>
+                        <!-- Pescoço -->
+                        <rect x="42" y="55" width="16" height="20" fill="#F3B182"/>
+                        <!-- Rosto -->
+                        <circle cx="50" cy="42" r="22" fill="#F3B182"/>
+                        <!-- Cabelo / Franja -->
+                        <path d="M28,32 Q50,15 72,32 Q50,28 28,32" fill="#0D1B2A"/>
+                        <path d="M28,28 Q18,50 28,65 L32,65 Q25,45 32,35 Z" fill="#0D1B2A"/>
+                        <path d="M72,28 Q82,50 72,65 L68,65 Q75,45 68,35 Z" fill="#0D1B2A"/>
+                        <!-- Gola da Camisa Branca -->
+                        <path d="M35,70 L50,85 L65,70 Z" fill="#FFFFFF"/>
+                        <!-- Roupa / Casaco Verde -->
+                        <path d="M25,75 L38,72 L45,85 L35,100 L15,100 Z" fill="#1B4D3E"/>
+                        <path d="M75,75 L62,72 L55,85 L65,100 L85,100 Z" fill="#1B4D3E"/>
+                        <path d="M42,80 L50,92 L58,80 L50,100 Z" fill="#F3B182"/>
+                    </svg>
+                </div>
+                <div class="username">@Usuário</div>
+            </section>
+
+            <!-- Nível Card -->
+            <section class="card level-card">
+                <h2>Seu nível</h2>
+                <div>
+                    <div class="level-display">Nível <span id="level-number" class="level-number">2</span></div>
+                    <div class="progress-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                    <div class="progress-values">
+                        <span id="current-pts">145</span>
+                        <span id="target-pts">400</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- SEÇÃO CONTRIBUIÇÕES -->
+        <section class="card contributions-card">
+            <h2>Suas Contribuições</h2>
+            <div class="contributions-list" id="contributions-container">
+                <!-- Os itens serão populados via JS dinamicamente mantendo a estrutura da imagem -->
+            </div>
+        </section>
+
+        <!-- SEÇÃO INFORMATIVA PASSO A PASSO -->
+        <section class="steps-grid">
+            
+            <div class="step-card">
+                <div class="step-icon-wrapper">
+                    <span class="material-symbols-outlined">local_mall</span>
+                </div>
+                <div class="step-info">
+                    <h3>1. Separe</h3>
+                    <p>Separe seus resíduos em casa de forma correta.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-icon-wrapper">
+                    <span class="material-symbols-outlined">location_on</span>
+                </div>
+                <div class="step-info">
+                    <h3>2. Leve</h3>
+                    <p>Encontre o ecoponto mais próximo de você.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-icon-wrapper">
+                    <span class="material-symbols-outlined">delete_outline</span>
+                </div>
+                <div class="step-info">
+                    <h3>3. Descarte</h3>
+                    <p>Descarte corretamente cada tipo de material no local adequado.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-icon-wrapper">
+                    <span class="material-symbols-outlined">eco</span>
+                </div>
+                <div class="step-info">
+                    <h3>4. Transforme</h3>
+                    <p>Seu descarte vira impacto positivo para o meio ambiente e a comunidade.</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-credits">
+            <span class="year-badge">2026</span>
+            <span>FEITO POR Agda Oliveira • Rosana Ferreira • Maria eduarda • Poliana Machado • José Victor</span>
+        </div>
+        <span class="material-symbols-outlined footer-logo">eco</span>
+    </footer>
+
+    <!-- Script JS externo -->
+    <script src="script/userarea.js"></script>
+</body>
+</html>

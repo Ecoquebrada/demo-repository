@@ -1,0 +1,653 @@
+/* =====================================================
+   ECOQUEBRADA — PÁGINA INFORMATIVA
+   PARTE 2 — HEADER, HERO, CATEGORIAS E DESTAQUE
+===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Magra:wght@400;700&display=swap');
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    font-family: "Magra", sans-serif;
+
+    background: #ffffff;
+
+    color: #111111;
+
+}
+
+
+/* =====================================================
+   VARIÁVEIS
+===================================================== */
+
+:root {
+
+    --verde-principal: #2e7d32;
+
+    --verde-escuro: #1b5e20;
+
+    --verde-claro: #8bc34a;
+
+    --verde-suave: #eef6ed;
+
+    --preto: #111111;
+
+    --cinza: #555555;
+
+    --cinza-claro: #eeeeee;
+
+    --branco: #ffffff;
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    width:min(1200px,90%);
+    margin:auto;
+
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:90px;
+
+    z-index:1000;
+
+    background:transparent;
+
+    box-shadow:none;
+
+    transition: background-color 0.3s ease;
+}
+
+.main-header.scrolled {
+  background-color: var(--verde-suave); /* The solid color you want upon scrolling */
+  padding: 15px; /* Optional: shrink header slightly for a dynamic effect */
+}
+
+header .container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    height:82px;
+
+}
+
+header nav a{
+    color:#222;
+}
+
+.btn-login{
+
+    background:#2E7D32;
+    color:white;
+
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo img{
+
+    height:42px;
+
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+nav ul{
+
+    display:flex;
+
+    gap:35px;
+
+    list-style: none;
+
+}
+
+nav a{
+
+    color:#333;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+    position:relative;
+
+    text-decoration: none;
+
+    list-style: none;
+
+}
+
+nav a:hover{
+
+    color:var(--green);
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-7px;
+    left:0;
+
+    width:0%;
+
+    height:2px;
+
+    background:var(--green);
+
+    transition:.3s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+/* ===========================
+   BOTÃO LOGIN
+=========================== */
+
+.btn-login{
+
+    background:var(--verde-principal);
+
+    color:white;
+
+    padding:10px 24px;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    text-decoration: none;
+
+}
+
+.btn-login:hover{
+
+    background:var(--verde-escuro);
+
+}
+
+/* ===========================
+   MENU MOBILE
+=========================== */
+
+.menu-mobile{
+
+    display:none;
+
+    border:none;
+
+    background:none;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.informative-hero {
+
+    width: 100%;
+
+    min-height: 470px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 80px 85px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(27, 94, 32, .94),
+
+            rgba(46, 125, 50, .80)
+
+        ),
+
+        url("../img/hero-reciclagem.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+.informative-hero__content {
+
+    width: 100%;
+
+    max-width: 950px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+}
+
+
+.informative-hero__tag {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 8px 18px;
+
+    border: 1px solid rgba(255, 255, 255, .65);
+
+    border-radius: 50px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.informative-hero h1 {
+
+    max-width: 900px;
+
+    margin: 0 auto 22px;
+
+    font-family: "Magra", sans-serif;
+
+    font-size: 64px;
+
+    line-height: 1.08;
+
+    font-weight: 400;
+
+}
+
+
+.informative-hero h1 span {
+
+    display: block;
+
+    color: #b7d86b;
+
+    font-weight: 700;
+
+}
+
+
+.informative-hero p {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    font-size: 19px;
+
+    line-height: 1.5;
+
+    color: rgba(255, 255, 255, .92);
+
+}
+
+
+/* =====================================================
+   CATEGORIAS
+===================================================== */
+
+.categories {
+
+    width: 100%;
+
+    padding: 30px 85px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eeeeee;
+
+}
+
+
+.categories__container {
+
+    max-width: 1440px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+}
+
+
+.category-button {
+
+    padding: 13px 28px;
+
+    border: 1px solid #cfdccf;
+
+    border-radius: 50px;
+
+    background: #ffffff;
+
+    color: var(--verde-principal);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+
+        background .25s ease,
+
+        color .25s ease,
+
+        border-color .25s ease,
+
+        transform .25s ease;
+
+}
+
+
+.category-button:hover {
+
+    border-color: var(--verde-principal);
+
+    transform: translateY(-2px);
+
+}
+
+
+.category-button.active {
+
+    background: var(--verde-principal);
+
+    border-color: var(--verde-principal);
+
+    color: #ffffff;
+
+}
+
+
+/* =====================================================
+   DESTAQUE
+===================================================== */
+
+.featured {
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    padding: 90px 85px;
+
+}
+
+
+/* =====================================================
+   VIDEO DESTAQUE
+===================================================== */
+
+.featured__video {
+
+    width: 100%;
+
+}
+
+
+.video-placeholder {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 390px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background:
+
+        linear-gradient(
+
+            rgba(27, 94, 32, .20),
+
+            rgba(27, 94, 32, .20)
+
+        ),
+
+        url("../img/hero-reciclagem.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+.play-button {
+
+    width: 78px;
+
+    height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding-left: 5px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .95);
+
+    color: var(--verde-principal);
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .20);
+
+    transition:
+
+        transform .25s ease,
+
+        background .25s ease;
+
+}
+
+
+.play-button:hover {
+
+    transform: scale(1.1);
+
+    background: #ffffff;
+
+}
+
+
+/* =====================================================
+   CONTEÚDO DO DESTAQUE
+===================================================== */
+
+.featured__content {
+
+    max-width: 500px;
+
+}
+
+
+.content-tag {
+
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    color: var(--verde-principal);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.featured__content h2 {
+
+    margin-bottom: 20px;
+
+    font-family: "Magra", sans-serif;
+
+    color: var(--verde-escuro);
+
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    font-weight: 400;
+
+}
+
+
+.featured__content p {
+
+    margin-bottom: 28px;
+
+    color: var(--cinza);
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+}
+
+
+.read-more {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--verde-principal);
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: gap .25s ease;
+
+}
+
+
+.read-more span {
+
+    font-size: 22px;
+
+}
+
+
+.read-more:hover {
+
+    gap: 18px;
+
+}

@@ -91,7 +91,7 @@ header{
 
     z-index:1000;
 
-    background:transparent;
+    background:white;
 
     box-shadow:none;
 
@@ -229,21 +229,184 @@ nav a:hover::after{
 
 }
 
-/* ===========================
+/* ==========================================
+   BOTÃO MENU MOBILE
+========================================== */
+
+.menu-mobile {
+
+    display: none;
+
+    background: none;
+
+    border: none;
+
+    font-size: 28px;
+
+    color: var(--primary-green);
+
+    cursor: pointer;
+
+    padding: 5px;
+
+    z-index: 1001;
+
+}
+
+
+/* ==========================================
    MENU MOBILE
-=========================== */
+========================================== */
 
-.menu-mobile{
+.mobile-menu {
 
-    display:none;
+    position: fixed;
 
-    border:none;
+    top: 90px;
 
-    background:none;
+    right: -100%;
 
-    font-size:25px;
+    width: 280px;
 
-    cursor:pointer;
+    height: calc(100vh - 90px);
+
+    background: white;
+
+    padding: 40px 30px;
+
+    box-sizing: border-box;
+
+    transition: right .35s ease;
+
+    z-index: 999;
+
+    box-shadow: -10px 0 30px rgba(0,0,0,.10);
+
+}
+
+
+.mobile-menu.active {
+
+    right: 0;
+
+}
+
+
+.mobile-menu ul {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+.mobile-menu a {
+
+    color: #333;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+}
+
+
+.mobile-menu a:hover {
+
+    color: var(--primary-green);
+
+}
+
+
+/* ==========================================
+   OVERLAY
+========================================== */
+
+.overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.4);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .3s;
+
+    z-index: 998;
+
+}
+
+
+.overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        height: 75px;
+    }
+
+
+    header .container {
+
+        height: 73px;
+
+    }
+
+
+    header nav {
+
+        display: none;
+
+    }
+
+
+    .btn-account {
+
+        display: none;
+
+    }
+
+
+    .menu-mobile {
+
+        display: block;
+
+    }
+
+
+    .mobile-menu {
+
+        top: 75px;
+
+        height: calc(100vh - 75px);
+
+    }
 
 }
 
@@ -278,7 +441,7 @@ nav a:hover::after{
 
         ),
 
-        url("../img/hero-reciclagem.jpg");
+        url("../assets/Log-in\ 1.png");
 
     background-size: cover;
 
@@ -507,7 +670,7 @@ nav a:hover::after{
 
         ),
 
-        url("../img/hero-reciclagem.jpg");
+        url("../assets/reciclagem1.jfif");
 
     background-size: cover;
 
@@ -649,5 +812,1544 @@ nav a:hover::after{
 .read-more:hover {
 
     gap: 18px;
+
+}
+
+/* =====================================================
+   PARTE 3 — ARTIGOS E CONTEÚDOS
+===================================================== */
+
+
+/* =====================================================
+   SEÇÃO DE ARTIGOS
+===================================================== */
+
+.articles {
+
+    width: 100%;
+
+    padding: 30px 85px 90px;
+
+}
+
+
+/* =====================================================
+   CABEÇALHO DA SEÇÃO
+===================================================== */
+
+.section-header {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+
+}
+
+
+.section-tag {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--verde-principal);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.section-header h2 {
+
+    font-family: "Magra", sans-serif;
+
+    color: var(--verde-escuro);
+
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    font-weight: 400;
+
+}
+
+
+/* =====================================================
+   LINK "VER TODOS"
+===================================================== */
+
+.see-all {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-bottom: 5px;
+
+    color: var(--verde-principal);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: gap .25s ease;
+
+}
+
+
+.see-all span {
+
+    font-size: 21px;
+
+}
+
+
+.see-all:hover {
+
+    gap: 16px;
+
+}
+
+
+/* =====================================================
+   GRID DOS ARTIGOS
+===================================================== */
+
+.articles__grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* =====================================================
+   CARD DO ARTIGO
+===================================================== */
+
+.article-card {
+
+    width: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e8e1;
+
+    border-radius: 16px;
+
+    box-shadow: 0 8px 25px rgba(27, 94, 32, .07);
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease,
+
+        border-color .3s ease;
+
+}
+
+
+.article-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: #c8dac9;
+
+    box-shadow: 0 18px 40px rgba(27, 94, 32, .13);
+
+}
+
+
+/* =====================================================
+   IMAGEM DO ARTIGO
+===================================================== */
+
+.article-card__image {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 230px;
+
+    overflow: hidden;
+
+    background: #e9f1e9;
+
+}
+
+
+.article-card__image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .45s ease;
+
+}
+
+
+.article-card:hover .article-card__image img {
+
+    transform: scale(1.05);
+
+}
+
+
+/* =====================================================
+   CONTEÚDO DO CARD
+===================================================== */
+
+.article-card__content {
+
+    padding: 25px 25px 28px;
+
+}
+
+
+.article-card__category {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--verde-principal);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.article-card__content h3 {
+
+    min-height: 58px;
+
+    margin-bottom: 12px;
+
+    color: var(--verde-escuro);
+
+    font-family: "Magra", sans-serif;
+
+    font-size: 23px;
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+}
+
+
+.article-card__content p {
+
+    min-height: 48px;
+
+    margin-bottom: 20px;
+
+    color: #666666;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   LINK DO ARTIGO
+===================================================== */
+
+.article-card__content > a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--verde-principal);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: gap .25s ease;
+
+}
+
+
+.article-card__content > a span {
+
+    font-size: 19px;
+
+}
+
+
+.article-card__content > a:hover {
+
+    gap: 15px;
+
+}
+
+
+/* =====================================================
+   EFEITO DE FOCO
+===================================================== */
+
+.article-card:focus-within {
+
+    outline: 3px solid rgba(46, 125, 50, .20);
+
+    outline-offset: 3px;
+
+}
+
+
+/* =====================================================
+   QUANDO NÃO HOUVER IMAGEM
+===================================================== */
+
+.article-card__image img[src=""],
+.article-card__image img:not([src]) {
+
+    display: none;
+
+}
+
+
+.article-card__image:has(img[src=""] ) {
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #e7f1e6,
+
+            #cfe3cf
+
+        );
+
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE — ARTIGOS
+===================================================== */
+
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 1100px) {
+
+    .articles {
+
+        padding-left: 45px;
+
+        padding-right: 45px;
+
+    }
+
+
+    .articles__grid {
+
+        gap: 22px;
+
+    }
+
+
+    .article-card__image {
+
+        height: 200px;
+
+    }
+
+
+    .article-card__content {
+
+        padding: 21px;
+
+    }
+
+
+    .article-card__content h3 {
+
+        font-size: 20px;
+
+    }
+
+}
+
+
+/* ---------- TABLET MENOR ---------- */
+
+@media (max-width: 800px) {
+
+    .articles {
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+
+    }
+
+
+    .section-header h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .articles__grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .article-card:last-child {
+
+        grid-column: span 2;
+
+        max-width: calc(50% - 11px);
+
+        justify-self: center;
+
+    }
+
+}
+
+
+/* ---------- CELULAR ---------- */
+
+@media (max-width: 600px) {
+
+    .articles {
+
+        padding-top: 20px;
+
+        padding-bottom: 60px;
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+
+    }
+
+
+    .section-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+    .section-header h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .section-tag {
+
+        font-size: 11px;
+
+    }
+
+
+    .see-all {
+
+        font-size: 14px;
+
+    }
+
+
+    .articles__grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+    }
+
+
+    .article-card:last-child {
+
+        grid-column: auto;
+
+        max-width: none;
+
+    }
+
+
+    .article-card__image {
+
+        height: 220px;
+
+    }
+
+
+    .article-card__content {
+
+        padding: 22px;
+
+    }
+
+
+    .article-card__content h3 {
+
+        min-height: auto;
+
+        font-size: 21px;
+
+    }
+
+
+    .article-card__content p {
+
+        min-height: auto;
+
+    }
+
+}
+
+
+/* ---------- CELULAR PEQUENO ---------- */
+
+@media (max-width: 400px) {
+
+    .articles {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+    }
+
+
+    .section-header h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .article-card__image {
+
+        height: 190px;
+
+    }
+
+
+    .article-card__content {
+
+        padding: 18px;
+
+    }
+
+
+    .article-card__content h3 {
+
+        font-size: 19px;
+
+    }
+
+
+    .article-card__content p {
+
+        font-size: 13px;
+
+    }
+
+}
+
+/* =====================================================
+   CORREÇÕES GERAIS DE RESPONSIVIDADE
+===================================================== */
+
+html,
+body {
+
+    max-width: 100%;
+
+    overflow-x: hidden;
+
+}
+
+
+img {
+
+    max-width: 100%;
+
+}
+
+
+button,
+a {
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+/* Evita que textos muito grandes estourem
+   o tamanho da tela */
+
+h1,
+h2,
+h3,
+p {
+
+    overflow-wrap: break-word;
+
+}
+
+/* =====================================================
+   PARTE 4 — VÍDEOS
+===================================================== */
+
+
+/* =====================================================
+   SEÇÃO DE VÍDEOS
+===================================================== */
+
+.videos {
+
+    width: 100%;
+
+    padding: 30px 85px 100px;
+
+}
+
+
+/* =====================================================
+   GRID DOS VÍDEOS
+===================================================== */
+
+.videos__grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* =====================================================
+   CARD DE VÍDEO
+===================================================== */
+
+.video-card {
+
+    width: 100%;
+
+    min-width: 0;
+
+    cursor: pointer;
+
+}
+
+
+.video-card__thumbnail {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 235px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: #e8f0e8;
+
+}
+
+
+.video-card__thumbnail img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .4s ease;
+
+}
+
+
+/* =====================================================
+   EFEITO HOVER NA IMAGEM
+===================================================== */
+
+.video-card:hover
+.video-card__thumbnail img {
+
+    transform: scale(1.05);
+
+}
+
+
+/* =====================================================
+   BOTÃO PLAY
+===================================================== */
+
+.video-card__play {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: 65px;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding-left: 4px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .94);
+
+    color: var(--verde-principal);
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .20);
+
+    transition:
+
+        transform .25s ease,
+
+        background .25s ease,
+
+        box-shadow .25s ease;
+
+}
+
+
+.video-card:hover
+.video-card__play {
+
+    transform: translate(-50%, -50%) scale(1.1);
+
+    background: #ffffff;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+
+}
+
+
+/* =====================================================
+   TÍTULO DO VÍDEO
+===================================================== */
+
+.video-card h3 {
+
+    margin-top: 18px;
+
+    color: var(--verde-escuro);
+
+    font-family: "Magra", sans-serif;
+
+    font-size: 22px;
+
+    line-height: 1.25;
+
+    font-weight: 400;
+
+}
+
+
+/* =====================================================
+   DURAÇÃO / INFORMAÇÃO
+===================================================== */
+
+.video-card > span {
+
+    display: block;
+
+    margin-top: 10px;
+
+    color: #777777;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   FOCO DO BOTÃO
+===================================================== */
+
+.video-card__play:focus-visible {
+
+    outline: 3px solid rgba(46, 125, 50, .35);
+
+    outline-offset: 4px;
+
+}
+
+
+/* =====================================================
+   TABLET — VÍDEOS
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .videos {
+
+        padding-left: 45px;
+
+        padding-right: 45px;
+
+    }
+
+
+    .videos__grid {
+
+        gap: 22px;
+
+    }
+
+
+    .video-card__thumbnail {
+
+        height: 205px;
+
+    }
+
+
+    .video-card h3 {
+
+        font-size: 20px;
+
+    }
+
+}
+
+
+/* =====================================================
+   TABLET MENOR
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .videos {
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+
+    }
+
+
+    .videos__grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .video-card__thumbnail {
+
+        height: 210px;
+
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .videos {
+
+        padding-top: 20px;
+
+        padding-bottom: 70px;
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+
+    }
+
+
+    .videos .section-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+    .videos .section-header h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .videos__grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+
+    .video-card__thumbnail {
+
+        height: auto;
+
+        aspect-ratio: 16 / 9;
+
+        border-radius: 14px;
+
+    }
+
+
+    .video-card__play {
+
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 20px;
+
+    }
+
+
+    .video-card h3 {
+
+        margin-top: 15px;
+
+        font-size: 21px;
+
+        line-height: 1.25;
+
+    }
+
+
+    .video-card > span {
+
+        margin-top: 8px;
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR PEQUENO
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .videos {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+    }
+
+
+    .videos .section-header h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .video-card__thumbnail {
+
+        border-radius: 12px;
+
+    }
+
+
+    .video-card__play {
+
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 18px;
+
+    }
+
+
+    .video-card h3 {
+
+        font-size: 19px;
+
+    }
+
+}
+
+/* =====================================================
+   HERO — RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .informative-hero {
+
+        min-height: 430px;
+
+        padding: 70px 35px;
+
+    }
+
+
+    .informative-hero h1 {
+
+        font-size: 48px;
+
+    }
+
+
+    .informative-hero p {
+
+        font-size: 17px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .informative-hero {
+
+        min-height: 420px;
+
+        padding: 60px 20px;
+
+    }
+
+
+    .informative-hero__tag {
+
+        margin-bottom: 16px;
+
+        padding: 7px 14px;
+
+        font-size: 10px;
+
+        letter-spacing: 1.2px;
+
+    }
+
+
+    .informative-hero h1 {
+
+        font-size: clamp(34px, 10vw, 43px);
+
+        line-height: 1.08;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .informative-hero p {
+
+        max-width: 450px;
+
+        font-size: 15px;
+
+        line-height: 1.55;
+
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .informative-hero {
+
+        min-height: 400px;
+
+        padding: 50px 15px;
+
+    }
+
+
+    .informative-hero h1 {
+
+        font-size: 33px;
+
+    }
+
+
+    .informative-hero p {
+
+        font-size: 14px;
+
+    }
+
+}
+
+/* =====================================================
+   DESTAQUE — RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .featured {
+
+        gap: 40px;
+
+        padding-left: 45px;
+
+        padding-right: 45px;
+
+    }
+
+
+    .video-placeholder {
+
+        height: 330px;
+
+    }
+
+
+    .featured__content h2 {
+
+        font-size: 36px;
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .featured {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 65px 25px;
+
+    }
+
+
+    .featured__content {
+
+        max-width: 100%;
+
+    }
+
+
+    .video-placeholder {
+
+        height: auto;
+
+        aspect-ratio: 16 / 9;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .featured {
+
+        gap: 28px;
+
+        padding: 55px 20px;
+
+    }
+
+
+    .video-placeholder {
+
+        border-radius: 14px;
+
+    }
+
+
+    .play-button {
+
+        width: 60px;
+
+        height: 60px;
+
+        font-size: 22px;
+
+    }
+
+
+    .featured__content h2 {
+
+        font-size: 31px;
+
+    }
+
+
+    .featured__content p {
+
+        font-size: 15px;
+
+        line-height: 1.55;
+
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .featured {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+    }
+
+
+    .featured__content h2 {
+
+        font-size: 28px;
+
+    }
+
+}
+
+/* =====================================================
+   HEADER — RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .header {
+
+        height: 100px;
+
+    }
+
+
+    .header__container {
+
+        padding: 0 35px;
+
+    }
+
+
+    .logo img {
+
+        width: 190px;
+
+    }
+
+
+    .nav {
+
+        display: none;
+
+    }
+
+
+    .btn-login {
+
+        display: none;
+
+    }
+
+
+    .menu-mobile {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        width: 45px;
+
+        height: 45px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+
+        height: 85px;
+
+    }
+
+
+    .header__container {
+
+        padding: 0 20px;
+
+    }
+
+
+    .logo img {
+
+        width: 165px;
+
+    }
+
+
+    .menu-mobile {
+
+        font-size: 25px;
+
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .header__container {
+
+        padding: 0 15px;
+
+    }
+
+
+    .logo img {
+
+        width: 150px;
+
+    }
+
+}
+
+/* =====================================================
+   ANIMAÇÃO DOS FILTROS
+===================================================== */
+
+.article-card,
+.video-card {
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+
+}
+
+
+.article-card.content-hidden,
+.video-card.content-hidden {
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+}
+
+/* =====================================================
+   MENU MOBILE ABERTO
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .nav.nav--open {
+
+        position: absolute;
+
+        top: 100px;
+
+        left: 0;
+
+        width: 100%;
+
+        display: block;
+
+        padding: 25px 35px;
+
+        background: #ffffff;
+
+        border-bottom: 1px solid #e1e8e1;
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+        z-index: 1000;
+
+    }
+
+
+    .nav.nav--open .nav__list {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 22px;
+
+    }
+
+
+    .nav.nav--open .nav__list a {
+
+        font-size: 17px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .nav.nav--open {
+
+        top: 85px;
+
+        padding: 25px 20px;
+
+    }
+
+}
+
+.footer{
+
+    background:#1F5F2E;
+    padding:18px 0;
+    color:#fff;
+
+}
+
+.footer-container{
+
+    width:min(1200px,92%);
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.footer-year{
+
+    font-size:28px;
+    font-weight:700;
+    min-width:90px;
+
+}
+
+.footer-authors{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    flex:1;
+
+    margin-left:25px;
+
+    font-size:12px;
+
+}
+
+.footer-authors span{
+
+    color:#D8D8D8;
+
+}
+
+.footer-authors a{
+
+    color:white;
+    transition:.3s;
+
+}
+
+.footer-authors a:hover{
+
+    color:#9BC54E;
+
+}
+
+.footer-logo img{
+
+    width:30px;
 
 }

@@ -6,6 +6,7 @@
     <title>EcoQuebrada</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/responsive.css">
 
     <!-- Font Awesome -->
@@ -38,20 +39,31 @@
 
                     <li><a href="mapa.html">Mapa</a></li>
                     <li><a href="informativo.html">Informações</a></li>
-                    <li><a href="#denunciar">Denunciar</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
 
                 </ul>
 
             </nav>
 
-            <a href="userarea.html" class="btn-login">
+            <a href="login.html" class="btn-login" id="loginButton">
                 Entrar
             </a>
 
-            <button class="menu-mobile">
+            <button class="menu-mobile" id="menu-mobile">
                 <i class="fa-solid fa-bars"></i>
             </button>
+
+            <div class="mobile-menu" id="mobileMenu">
+
+                <ul>
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="informativo.html">Informações</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+
+            </div>
+
+        <div class="overlay" id="overlay"></div>
 
         </div>
 
@@ -78,7 +90,7 @@
 
                 <div class="hero-buttons">
 
-                    <a href="#" class="btn-primary">
+                    <a href="login.html" class="btn-primary">
                         Quero participar
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -376,6 +388,7 @@
 </footer>
 
     <script src="script/app.js"></script>
+    <script src="script/navbar.js"></script>
 
 </body>
 </html>

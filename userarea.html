@@ -8,6 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
     <!-- Link para o CSS externo -->
     <link rel="stylesheet" href="css/userarea.css">
+    
+        <link rel="shortcut icon" href="assets/icon-favicon.svg" type="image/x-icon">
+
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Magra:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome (usado no menu hamburguer, mesmo padrão da index) -->
     <link rel="stylesheet"
@@ -15,25 +21,59 @@
 </head>
 <body>
 
-    <!-- HEADER / MENU SUPERIOR -->
+    <!-- HEADER / MENU SUPERIOR 
     <header>
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
             <img src="assets/logo-Ecoquebrada.svg" alt="EcoQuebrada">
         </a>
         <nav>
             <ul>
-                <li><a href="#mapa">Mapa</a></li>
-                <li><a href="#denuncias">Denúncias</a></li>
-                <li><a href="#educacao">Educação</a></li>
-                <li><a href="#impacto">Impacto</a></li>
-                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+                <li><a href="informativo.html">Informações</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            
             </ul>
         </nav>
+        <div>
         <button class="btn-account" onclick="handleAccountClick()">Minha conta</button>
-
+        <button id="logoutButton" class="btn-account">Sair</button>
+        </div>
         <button class="menu-mobile">
             <i class="fa-solid fa-bars"></i>
         </button>
+    </header> -->
+
+    <header>
+
+        <div class="container">
+
+            <a href="index.html" class="logo">
+                <img src="assets/logo-Ecoquebrada.svg" alt="EcoQuebrada">
+            </a>
+
+            <nav>
+
+                <ul>
+
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="informativo.html">Informações</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+
+                </ul>
+
+            </nav>
+        <div>    
+            <button class="btn-account" onclick="handleAccountClick()">Minha conta</button>
+            <button id="logoutButton" class="btn-account">Sair</button>
+        </div>
+        <button class="menu-mobile" id="menu-mobile">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+
+        </div>
+
     </header>
 
     <!-- CONTEÚDO PRINCIPAL -->
@@ -65,7 +105,7 @@
                         <path d="M42,80 L50,92 L58,80 L50,100 Z" fill="#F3B182"/>
                     </svg>
                 </div>
-                <div class="username">@Usuário</div>
+                <div class="username">Olá, <span id="userName"></span>!</div>
             </section>
 
             <!-- Nível Card -->
@@ -146,10 +186,15 @@
             <span class="year-badge">2026</span>
             <span>FEITO POR Agda Oliveira • Rosana Ferreira • Maria eduarda • Poliana Machado • José Victor</span>
         </div>
-        <span class="material-symbols-outlined footer-logo">eco</span>
+       <div class="footer-logo">
+
+            <img src="assets/icon-footer.svg" alt="EcoQuebrada">
+
+        </div>
     </footer>
 
     <!-- Script JS externo -->
     <script src="script/userarea.js"></script>
+    <script src="script/navbar.js"></script>
 </body>
 </html>

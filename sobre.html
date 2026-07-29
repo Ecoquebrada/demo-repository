@@ -11,6 +11,10 @@
 
     <link rel="stylesheet" href="css/sobre.css">
 
+        <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
     <link rel="shortcut icon" href="assets/icon-favicon.svg" type="image/x-icon">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,40 +35,69 @@
          HEADER
     ====================================================== -->
 
-     <header>
+<header>
 
-        <div class="container">
+    <div class="container">
 
-            <a href="index.html" class="logo">
-                <img src="assets/logo-Ecoquebrada.svg" alt="EcoQuebrada">
-            </a>
+        <a href="index.html" class="logo">
+            <img src="assets/logo-Ecoquebrada.svg" alt="EcoQuebrada">
+        </a>
 
-            <nav>
+        <nav>
+            <ul>
+                <li><a href="mapa.html">Mapa</a></li>
+                <li><a href="informativo.html">Informações</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
 
-                <ul>
+        <a href="login.html" class="btn-login" id="loginButton">
+            Entrar
+        </a>
 
-                    <li><a href="#home">Mapa</a></li>
-                    <li><a href="#denuncias">Denúncias</a></li>
-                    <li><a href="#educacao">Educação</a></li>
-                    <li><a href="#impacto">Impacto</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
+        <!-- BOTÃO DO MENU MOBILE -->
 
-                </ul>
+        <button class="menu-mobile" id="menu-mobile" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
-            </nav>
 
-            <a href="#" class="btn-login">
-                Entrar
-            </a>
+        <!-- MENU MOBILE -->
 
-            <button class="menu-mobile">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+        <div class="mobile-menu" id="mobileMenu">
+
+            <ul>
+
+                <li>
+                    <a href="mapa.html">Mapa</a>
+                </li>
+
+                <li>
+                    <a href="informativo.html">Informações</a>
+                </li>
+
+                <li>
+                    <a href="sobre.html">Sobre</a>
+                </li>
+
+                <li>
+                    <a href="login.html" id="loginButton">
+                        Entrar
+                    </a>
+                </li>
+
+            </ul>
 
         </div>
 
-    </header>
 
+        <!-- FUNDO ESCURO -->
+
+        <div class="overlay" id="overlay"></div>
+
+    </div>
+
+</header>
 
 
     <main>
@@ -429,75 +462,50 @@
          FOOTER
     ====================================================== -->
 
-    <footer class="footer">
+ <footer class="footer">
 
+    <div class="footer-container">
 
-        <div class="footer__inner container">
+        <div class="footer-year">
+            <strong>2026</strong>
+        </div>
 
+        <div class="footer-authors">
 
-            <span class="footer__year">
+            <span>FEITO POR</span>
 
-                2026
+            <a href="#">Agda Oliveira</a>
 
-            </span>
+            <span>●</span>
 
+            <a href="#">Rosana Ferreira</a>
 
+            <span>●</span>
 
-            <p class="footer__credits">
+            <a href="#">Maria Eduarda</a>
 
-                FEITO POR&nbsp;
+            <span>●</span>
 
-                Agda Oliveira
+            <a href="#">Poliana Machado</a>
 
-                &nbsp;●&nbsp;
+            <span>●</span>
 
-                Rosana Ferreira
-
-                &nbsp;●&nbsp;
-
-                Maria Eduarda
-
-                &nbsp;●&nbsp;
-
-                Poliana Machado
-
-                &nbsp;●&nbsp;
-
-                José Victor
-
-            </p>
-
-
-
-            <svg
-                class="footer__leaf"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-            >
-
-                <path
-                    d="M12 2C7 2 3 6 3 11c0 5 4 9 9 11 5-2 9-6 9-11 0-5-4-9-9-9z"
-                    fill="currentColor"
-                />
-
-                <path
-                    d="M12 5c0 6-3.5 9-7 10"
-                    stroke="#1b5e20"
-                    stroke-width="1.2"
-                    stroke-linecap="round"
-                />
-
-            </svg>
-
+            <a href="#">José Victor</a>
 
         </div>
 
+        <div class="footer-logo">
 
-    </footer>
+            <img src="assets/icon-footer.svg" alt="EcoQuebrada">
 
+        </div>
 
+    </div>
+
+</footer>
+
+    <script src="script/sobre.js"></script>
+    <script src="script/navbar.js"></script>
 
 </body>
 

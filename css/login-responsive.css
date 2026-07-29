@@ -1,0 +1,433 @@
+/*==========================================
+        NOTEBOOKS (1400px)
+==========================================*/
+
+@media (max-width:1400px){
+
+    .login-card{
+
+        max-width:420px;
+
+        padding:38px;
+
+    }
+
+    .login-card h1{
+
+        font-size:48px;
+
+    }
+
+    footer{
+
+        padding:22px 40px;
+
+    }
+
+}
+
+/*==========================================
+            NOTEBOOKS (1200px)
+==========================================*/
+
+@media (max-width:1200px){
+
+    .close-button{
+
+        top:35px;
+        left:35px;
+
+    }
+
+    .login-card{
+
+        max-width:400px;
+
+    }
+
+    .login-card h1{
+
+        font-size:42px;
+
+    }
+
+    .footer-left h2{
+
+        font-size:42px;
+
+    }
+
+    .footer-left p{
+
+        font-size:14px;
+
+    }
+
+}
+
+/*==========================================
+            TABLETS
+==========================================*/
+
+@media (max-width:992px){
+
+    .login-container{
+
+        padding:100px 20px 120px;
+
+    }
+
+    .login-card{
+
+        width:100%;
+
+        max-width:450px;
+
+    }
+
+    footer{
+
+        position:relative;
+
+        margin-top:40px;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        text-align:center;
+
+        gap:20px;
+
+        padding:30px 20px;
+
+    }
+
+    .footer-left{
+
+        flex-direction:column;
+
+        gap:12px;
+
+    }
+
+    .footer-left p{
+
+        justify-content:center;
+
+    }
+
+}
+
+/*==========================================
+            TABLETS PEQUENOS
+==========================================*/
+
+@media (max-width:768px){
+
+    body{
+
+        background-position:center;
+
+    }
+
+    .background-overlay{
+
+        backdrop-filter:blur(5px);
+
+    }
+
+    .close-button{
+
+        top:20px;
+        left:20px;
+
+        width:46px;
+        height:46px;
+
+        font-size:22px;
+
+        border-radius:14px;
+
+    }
+
+    .login-container{
+
+        padding:90px 18px 50px;
+
+    }
+
+    .login-card{
+
+        max-width:100%;
+
+        padding:32px 24px;
+
+        border-radius:24px;
+
+    }
+
+    .login-card h1{
+
+        font-size:36px;
+
+        margin-bottom:28px;
+
+    }
+
+    .input-group input{
+
+        height:54px;
+
+        font-size:1rem;
+
+    }
+
+    .btn-login{
+
+        height:54px;
+
+        font-size:1.15rem;
+
+    }
+
+    .social-btn{
+
+        height:52px;
+
+        font-size:.95rem;
+
+    }
+
+    .social-btn img{
+
+        width:22px;
+        height:22px;
+
+    }
+
+    .terms{
+
+        font-size:.78rem;
+
+    }
+
+}
+
+/*==========================================
+            CELULARES
+==========================================*/
+
+@media (max-width:576px){
+
+    .login-container{
+
+        padding:80px 15px 40px;
+
+    }
+
+    .login-card{
+
+        padding:26px 20px;
+
+        border-radius:20px;
+
+    }
+
+    .login-card h1{
+
+        font-size:30px;
+
+    }
+
+    .divider{
+
+        margin:22px 0;
+
+    }
+
+    .divider span{
+
+        font-size:.9rem;
+
+    }
+
+    .input-group{
+
+        margin-bottom:15px;
+
+    }
+
+    .input-group input{
+
+        height:50px;
+
+        font-size:.95rem;
+
+        padding:0 15px;
+
+    }
+
+    .password input{
+
+        padding-right:50px;
+
+    }
+
+    .toggle-password{
+
+        right:14px;
+
+    }
+
+    .btn-login{
+
+        height:50px;
+
+        font-size:1.05rem;
+
+    }
+
+    .social-btn{
+
+        height:48px;
+
+        font-size:.88rem;
+
+        gap:10px;
+
+    }
+
+    .forgot-password{
+
+        margin-bottom:18px;
+
+    }
+
+    .switch-form{
+
+        font-size:.95rem;
+
+    }
+
+    footer{
+
+        padding:22px 18px;
+
+    }
+
+    .footer-left h2{
+
+        font-size:34px;
+
+    }
+
+    .footer-left span{
+
+        font-size:11px;
+
+    }
+
+    .footer-left p{
+
+        font-size:12px;
+
+        line-height:1.7;
+
+    }
+
+    .footer-right img{
+
+        width:40px;
+
+    }
+
+}
+
+/*==========================================
+        CELULARES PEQUENOS
+==========================================*/
+
+@media (max-width:390px){
+
+    .login-card{
+
+        padding:22px 16px;
+
+    }
+
+    .login-card h1{
+
+        font-size:26px;
+
+    }
+
+    .input-group input{
+
+        font-size:.9rem;
+
+    }
+
+    .btn-login{
+
+        font-size:1rem;
+
+    }
+
+    .social-btn{
+
+        font-size:.82rem;
+
+    }
+
+    .social-btn img{
+
+        width:20px;
+        height:20px;
+
+    }
+
+    .footer-left p{
+
+        flex-direction:column;
+
+        gap:5px;
+
+    }
+
+    .footer-left p span{
+
+        display:none;
+
+    }
+
+}
+
+/*==========================================
+        TELAS BAIXAS
+==========================================*/
+
+@media (max-height:700px){
+
+    .login-container{
+
+        padding-top:80px;
+        padding-bottom:40px;
+
+    }
+
+    .login-card{
+
+        margin:20px 0;
+
+    }
+
+    footer{
+
+        position:relative;
+
+    }
+
+}

@@ -1,6 +1,6 @@
 /*=====================================
     MENU MOBILE
-=====================================*/
+=====================================
 
 const menuButton = document.querySelector(".menu-mobile");
 const nav = document.querySelector("nav");
@@ -19,6 +19,58 @@ menuButton.addEventListener("click", () => {
     }
 });
 
+*/
+
+/* ==========================================
+   MENU MOBILE
+========================================== */
+
+const menuButton = document.querySelector(".menu-mobile");
+const mobileMenu = document.querySelector(".mobile-menu");
+const overlay = document.querySelector(".overlay");
+
+
+if (menuButton && mobileMenu && overlay) {
+
+    menuButton.addEventListener("click", () => {
+
+        mobileMenu.classList.toggle("active");
+
+        overlay.classList.toggle("active");
+
+    });
+
+
+    /* Fechar clicando no overlay */
+
+    overlay.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("active");
+
+        overlay.classList.remove("active");
+
+    });
+
+
+    /* Fechar ao clicar em um link */
+
+    const menuLinks =
+        mobileMenu.querySelectorAll("a");
+
+
+    menuLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mobileMenu.classList.remove("active");
+
+            overlay.classList.remove("active");
+
+        });
+
+    });
+
+}
 /*=====================================
     FECHAR MENU AO CLICAR
 =====================================*/
@@ -171,43 +223,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
 });
 
-/*=====================================
-    BOTÃO VOLTAR AO TOPO
-=====================================*/
 
-const topButton = document.createElement("button");
-
-topButton.innerHTML = '<i class="fa-solid fa-chevron-up"></i>';
-
-topButton.classList.add("top-button");
-
-document.body.appendChild(topButton);
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY > 500){
-
-        topButton.classList.add("show");
-
-    }else{
-
-        topButton.classList.remove("show");
-
-    }
-
-});
-
-topButton.addEventListener("click",()=>{
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-});
 
 /*=====================================
     EFEITO PARALLAX HERO

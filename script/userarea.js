@@ -98,3 +98,35 @@ function handleAccountClick() {
 window.addEventListener('DOMContentLoaded', () => {
     renderContributions();
 });
+
+
+const userName = document.getElementById("userName");
+
+const username =
+    localStorage.getItem("username");
+
+if (username) {
+
+    userName.textContent = username;
+
+} else {
+
+    userName.textContent = "Usuário";
+
+}
+
+const logoutButton =
+    document.getElementById("logoutButton");
+
+
+if (logoutButton) {
+
+    logoutButton.addEventListener("click", () => {
+
+        localStorage.removeItem("username");
+
+        window.location.href = "index.html";
+
+    });
+
+}

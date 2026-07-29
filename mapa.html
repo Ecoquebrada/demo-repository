@@ -26,39 +26,50 @@
 
   <!-- ================= HEADER ================= -->
 
-  <header>
+ <header>
 
-    <div class="container">
+        <div class="container">
 
-      <a href="index.html" class="logo">
-        <img src="../assets/logo-Ecoquebrada.svg" alt="EcoQuebrada">
-      </a>
+            <a href="index.html" class="logo">
+                <img src="assets/logo-Ecoquebrada.svg" alt="EcoQuebrada">
+            </a>
 
-      <nav>
+            <nav>
 
-        <ul>
+                <ul>
 
                     <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="#informacoes">Informações</a></li>
-                    <li><a href="#denunciar">Denunciar</a></li>
+                    <li><a href="informativo.html">Informações</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
 
+                </ul>
 
-        </ul>
+            </nav>
 
-      </nav>
+            <a href="login.html" class="btn-login" id="loginButton">
+                Entrar
+            </a>
 
-      <a href="#" class="btn-login">
-        Entrar
-      </a>
+            <button class="menu-mobile" id="menu-mobile">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-      <button class="menu-mobile">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+            <div class="mobile-menu" id="mobileMenu">
 
-    </div>
+                <ul>
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="informativo.html">Informações</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
 
-  </header>
+            </div>
+
+        <div class="overlay" id="overlay"></div>
+
+        </div>
+
+    </header>
+
 
   <main>
     <div class="mapa">
@@ -139,6 +150,7 @@
   </footer>
 
   <script src="script/app.js"></script>
+  <script src="script/navbar.js"></script>
 
 </body>
 

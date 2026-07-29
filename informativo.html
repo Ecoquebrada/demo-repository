@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Magra:wght@400;700&display=swap" rel="stylesheet">
 
+
+        <link rel="shortcut icon" href="assets/icon-favicon.svg" type="image/x-icon">
 </head>
 
 
@@ -35,24 +37,52 @@
 
                     <li><a href="mapa.html">Mapa</a></li>
                     <li><a href="informativo.html">Informações</a></li>
-                    <li><a href="#denunciar">Denunciar</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
 
                 </ul>
 
             </nav>
 
-            <a href="login.html" class="btn-login">
+            <a href="login.html" class="btn-login" id="loginButton">
                 Entrar
             </a>
 
-            <button class="menu-mobile">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+           <!-- BOTÃO MOBILE -->
+        <button class="menu-mobile" id="menuMobile" aria-label="Abrir menu">
+            ☰
+        </button>
 
-        </div>
+    </div>
+</header>
 
-    </header>
+
+<!-- MENU MOBILE -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <ul>
+        <li>
+            <a href="mapa.html">Mapa</a>
+        </li>
+
+        <li>
+            <a href="informativos.html">Informações</a>
+        </li>
+
+        <li>
+            <a href="sobre.html">Sobre</a>
+        </li>
+
+        <li>
+            <a href="login.html" id="loginButton">
+                Entrar
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+<div class="overlay" id="overlay"></div>
 
 
 
@@ -261,7 +291,7 @@
                     <div class="article-card__image">
 
                         <img
-                            src="img/reciclagem.jpg"
+                            src="assets/reciclagem2.jfif"
                             alt="Materiais recicláveis"
                         >
 
@@ -314,7 +344,7 @@
                     <div class="article-card__image">
 
                         <img
-                            src="img/sustentabilidade.jpg"
+                            src="assets/reciclagem3.webp"
                             alt="Pessoa praticando sustentabilidade"
                         >
 
@@ -367,7 +397,7 @@
                     <div class="article-card__image">
 
                         <img
-                            src="img/educacao-ambiental.jpg"
+                            src="assets/reciclagem4.png"
                             alt="Educação ambiental"
                         >
 
@@ -467,7 +497,7 @@
                     <div class="video-card__thumbnail">
 
                         <img
-                            src="img/video-reciclagem.jpg"
+                            src="assets/reciclagem5.jpg"
                             alt="Vídeo sobre reciclagem"
                         >
 
@@ -509,7 +539,7 @@
                     <div class="video-card__thumbnail">
 
                         <img
-                            src="img/video-sustentabilidade.jpg"
+                            src="assets/reciclagem6.webp"
                             alt="Vídeo sobre sustentabilidade"
                         >
 
@@ -551,7 +581,7 @@
                     <div class="video-card__thumbnail">
 
                         <img
-                            src="img/video-educacao.jpg"
+                            src="assets/reciclagem7.jpg"
                             alt="Vídeo sobre educação ambiental"
                         >
 
@@ -592,75 +622,54 @@
     </main>
 
 
-
     <!-- ================= FOOTER ================= -->
 
-    <footer class="footer">
+   <footer class="footer">
 
+    <div class="footer-container">
 
-        <div class="footer__inner container">
+        <div class="footer-year">
+            <strong>2026</strong>
+        </div>
 
+        <div class="footer-authors">
 
-            <span class="footer__year">
+            <span>FEITO POR</span>
 
-                2026
+            <a href="#">Agda Oliveira</a>
 
-            </span>
+            <span>●</span>
 
+            <a href="#">Rosana Ferreira</a>
 
-            <p class="footer__credits">
+            <span>●</span>
 
-                FEITO POR&nbsp;
+            <a href="#">Maria Eduarda</a>
 
-                Agda Oliveira
+            <span>●</span>
 
-                &nbsp;●&nbsp;
+            <a href="#">Poliana Machado</a>
 
-                Rosana Ferreira
+            <span>●</span>
 
-                &nbsp;●&nbsp;
-
-                Maria Eduarda
-
-                &nbsp;●&nbsp;
-
-                Poliana Machado
-
-                &nbsp;●&nbsp;
-
-                José Victor
-
-            </p>
-
-
-            <svg
-                class="footer__leaf"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-
-                <path
-                    d="M12 2C7 2 3 6 3 11c0 5 4 9 9 11 5-2 9-6 9-11 0-5-4-9-9-9z"
-                    fill="currentColor"
-                />
-
-                <path
-                    d="M12 5c0 6-3.5 9-7 10"
-                    stroke="#1b5e20"
-                    stroke-width="1.2"
-                    stroke-linecap="round"
-                />
-
-            </svg>
+            <a href="#">José Victor</a>
 
         </div>
 
-    </footer>
+        <div class="footer-logo">
+
+            <img src="assets/icon-footer.svg" alt="EcoQuebrada">
+
+        </div>
+
+    </div>
+
+</footer>
 
 
 
-    <script src="js/informativos.js"></script>
+    <script src="script/informativos.js"></script>
+    <script src="script/navbar.js"></script>
 
 </body>
 

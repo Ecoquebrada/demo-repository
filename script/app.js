@@ -272,7 +272,7 @@ window.addEventListener("load",()=>{
 
 });
 
-console.log("EcoQuebrada carregado com sucesso!");
+console.log("EcoQuebrada carregado ATUALIZADO com sucesso!");
 
 
 /* Carrousel */

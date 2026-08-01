@@ -12,6 +12,97 @@ const togglePasswordButtons = document.querySelectorAll(".toggle-password");
 
 const forms = document.querySelectorAll("form");
 
+const loginFormulario = document.getElementById("loginformulario");
+const registerFormulario = document.getElementById("registerFormulario");
+
+
+/*==========================================
+    BANCO DE DADOS LOCAL
+==========================================*/
+
+let usuarios =
+    JSON.parse(localStorage.getItem("usuarios")) || [];
+
+function salvarUsuarios(){
+
+    localStorage.setItem(
+        "usuarios",
+        JSON.stringify(usuarios)
+    );
+
+}
+
+function cadastrarUsuario(username, password){
+
+    const existe = usuarios.find(user =>
+        user.username === username
+    );
+
+    if(existe){
+
+        alert("Esse usuário já existe.");
+
+        return false;
+
+    }
+
+    const usuario = {
+
+        username: username,
+
+        password: password,
+
+        numeroUsuario:
+            Math.floor(Math.random() * 31),
+
+        pontos: 0,
+
+        nivel: 1
+
+    };
+
+    usuarios.push(usuario);
+
+    salvarUsuarios();
+
+    localStorage.setItem(
+        "usuarioLogado",
+        JSON.stringify(usuario)
+    );
+
+    return true;
+
+}
+
+function loginUsuario(username, password){
+
+    const usuario = usuarios.find(user =>
+
+        user.username === username &&
+        user.password === password
+
+    );
+
+    if(!usuario){
+
+        alert("Usuário ou senha inválidos.");
+
+        return false;
+
+    }
+
+    localStorage.setItem(
+
+        "usuarioLogado",
+
+        JSON.stringify(usuario)
+
+    );
+
+    return true;
+
+}
+
 /*==========================================
         ABRIR CADASTRO
 ==========================================*/
@@ -113,27 +204,85 @@ if(registerPassword && confirmPassword){
 }
 
 /*==========================================
+    GERAR NÚMERO DO USUÁRIO
+==========================================*/
+
+// function gerarNumeroUsuario(username){
+
+//     console.log("Entrou na função");
+//     console.log("Username recebido:", username);
+
+//     const ultimoUsuario = localStorage.getItem("username");
+
+//     console.log("Último usuário:", ultimoUsuario);
+
+//     if(username !== ultimoUsuario){
+
+//         const numeroAleatorio = Math.floor(Math.random() * 31);
+
+//         console.log("Número gerado:", numeroAleatorio);
+
+//         localStorage.setItem("numeroUsuario", numeroAleatorio);
+
+//     }
+
+//     localStorage.setItem("username", username);
+
+// }
+
+/*==========================================
         SUBMIT DOS FORMULÁRIOS
 ==========================================*/
 
-forms.forEach(form => {
+forms.forEach(form=>{
 
-    form.addEventListener("submit", e => {
+    form.addEventListener("submit",e=>{
 
         e.preventDefault();
 
         if(!form.checkValidity()){
 
             form.reportValidity();
-            
 
             return;
 
         }
 
-        console.log("Formulário válido!");
-        window.location.href = "userarea.html";
+        // LOGIN
 
+        if(form.id==="loginformulario"){
+
+            const username =
+                document.getElementById("username").value.trim();
+
+            const password =
+                document.getElementById("loginPassword").value;
+
+            if(loginUsuario(username,password)){
+
+                window.location.href="userarea.html";
+
+            }
+
+        }
+
+        // CADASTRO
+
+        if(form.id==="registerFormulario"){
+
+            const username =
+                document.getElementById("registerUsername").value.trim();
+
+            const password =
+                document.getElementById("registerPassword").value;
+
+            if(cadastrarUsuario(username,password)){
+
+                window.location.href="userarea.html";
+
+            }
+
+        }
 
     });
 
@@ -219,29 +368,7 @@ window.addEventListener("load", () => {
         DEBUG
 ==========================================*/
 
-console.log("EcoQuebrada Login carregado!");
+console.log("EcoQuebrada Login ATUALIZADO carregado!");
 
-const loginFormulario = document.getElementById("loginformulario");
 
-loginFormulario.addEventListener("submit", function(event) {
 
-    event.preventDefault();
-
-    const username =
-        document.getElementById("username").value.trim();
-
-    if (username === "") {
-
-        alert("Digite seu nome de usuário.");
-
-        return;
-
-    }
-
-    // Salva o nome do usuário
-    localStorage.setItem("username", username);
-
-    // Vai para a página do usuário
-    window.location.href = "userarea.html";
-
-});

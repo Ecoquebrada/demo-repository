@@ -89,11 +89,6 @@ function renderContributions() {
     });
 }
 
-// Simulação do clique em "Minha Conta"
-function handleAccountClick() {
-    alert('Acessando configurações da conta de @Usuário...');
-}
-
 // Inicializador
 window.addEventListener('DOMContentLoaded', () => {
     renderContributions();
@@ -102,14 +97,26 @@ window.addEventListener('DOMContentLoaded', () => {
 
 const userName = document.getElementById("userName");
 
-const username =
-    localStorage.getItem("username");
+const usuario = JSON.parse(
 
-if (username) {
+    localStorage.getItem("usuarioLogado")
 
-    userName.textContent = username;
+);
 
-} else {
+if(usuario){
+
+    userName.textContent =
+        usuario.username;
+
+    document.getElementById("level-number")
+        .textContent =
+        usuario.numeroUsuario;
+
+    document.getElementById("target-pts")
+        .textContent =
+        usuario.numeroUsuario*5+100;
+
+}else{
 
     userName.textContent = "Usuário";
 
@@ -123,10 +130,11 @@ if (logoutButton) {
 
     logoutButton.addEventListener("click", () => {
 
-        localStorage.removeItem("username");
+        localStorage.removeItem("usuarioLogado");
 
         window.location.href = "index.html";
 
     });
 
 }
+
